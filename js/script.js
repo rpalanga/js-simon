@@ -17,15 +17,18 @@ let dayMissing = setInterval(function(){
     let seconds = Math.floor((distance % (1000 * 60)) / 1000);
 
 
-    document.getElementById("timer").innerHTML = days + "Giorno " + hours + "Ore "
-     + minutes + "Minuti " + seconds + "Secondi ";
+    document.getElementById("timer").innerHTML = days + " Giorno - " + hours + " Ore - "
+     + minutes + " Minuti - " + seconds + " Secondi ";
 
-    
+    if(distance < 0) {
+        clearInterval(dayMissing);
+        document.getElementById("timer").innerHTML = "SIII RICOMINCIA";
+    }
+
+
+}, 1000)
 
 
 
 
-
-
-})
 
